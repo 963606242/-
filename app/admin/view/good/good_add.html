@@ -1,0 +1,173 @@
+{include file='public/head' t='网站信息'}
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="" enctype="multipart/form-data">  
+    	<div class="form-group">
+        <div class="label">
+          <label>商品编号：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="" name="pro_number" data-validate="required:请输入编号" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>商品名：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="" name="name" data-validate="required:请输入商品名" />
+          <div class="tips"></div>
+        </div>
+      </div>
+       <div class="form-group">
+        <div class="label">
+          <label>划线价格：</label>
+        </div>
+        <div class="field">
+          <input type="number" class="input w50" value="" name="price" data-validate="required:请输入价格" />
+          <div class="tips"></div>
+        </div>
+      </div>
+       <div class="form-group">
+        <div class="label">
+          <label>商城价格：</label>
+        </div>
+        <div class="field">
+          <input type="number" class="input w50" value="" name="price_shop" data-validate="required:请输入价格" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>商品库存：</label>
+        </div>
+        <div class="field">
+          <input type="number" class="input w50" value="" name="num" data-validate="required:请输入库存" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>图片：</label>
+        </div>
+        <div class="field">
+          <input type="text" readonly id="url1" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" />
+          <input type="button"  class="button bg-blue margin-left" value="+ 浏览上传" >
+          <input type="file" name="img" onchange="url1.value=this.value" style="position:relative; z-index:1000px; filter:alpha(opacity=0);-moz-opacity:0; opacity:0; left:-155px;" />        	
+        </div>
+      </div>   
+      <div class="form-group">
+        <div class="label">
+          <label>轮播图：</label>
+        </div>
+        <div class="field">
+          <input type="text" readonly id="url2" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" />
+          <input type="button"  class="button bg-blue margin-left" value="+ 浏览上传" >
+          <input type="file" name="banner1" onchange="url2.value=this.value" style="position:relative; z-index:1000px; filter:alpha(opacity=0);-moz-opacity:0; opacity:0; left:-155px;" />        	
+        	<input type="button" class="button bg-green margin-left addT" id="image1" value="添加轮播图" >
+        </div>        
+      </div> 
+        <div class="form-group" id="typeTitle">
+          <div class="label">
+            <label>分类标题：</label>
+          </div>
+          <div class="field">
+            <select name="cid" class="input w50">
+              <option value="">请选择分类</option>
+	            <optgroup label="手机壳">
+	            	<option value="">三星</option>
+              	<option value="">华为</option>
+              	<option value="">小米</option>
+	            </optgroup>
+              <optgroup label="杯子"></optgroup>
+              <optgroup label="U盘"></optgroup>
+            </select>
+            <div class="tips"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="label">
+            <label>其他属性：</label>
+          </div>
+          <div class="field" style="padding-top:8px;"> 
+            首页 <input id="i_show"  type="checkbox" />
+            推荐 <input id="is_hot"  type="checkbox" />
+            下架 <input id="is_down"  type="checkbox" />          
+          </div>
+        </div>
+      <div class="form-group">
+        <div class="label">
+          <label>内容：</label>
+        </div>
+        <div class="field">
+          <textarea name="content" class="input" style="height:250px; border:1px solid #ddd;"></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>     
+      <div class="clear"></div>
+      <div class="form-group">
+        <div class="label">
+          <label>排序：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" name="sort" value="0"  data-validate="number:排序必须为数字" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>单位：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" name="authour" value=""  data-validate="required:请输入单位" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>人气：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" name="renqi" value="0" data-validate="number:只能为数字"  />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+<script>
+	var num=3;
+	var banner=2;
+	$(".addT").click(function(){
+		var cont=`<div class="form-group banner">
+        <div class="label">
+          <label>轮播图：</label>
+        </div>
+        <div class="field">
+          <input type="text" readonly id="url${num}" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" />
+          <input type="button"  class="button bg-blue margin-left" value="+ 浏览上传" >
+          <input type="file" name="banner${banner}" onchange="url${num}.value=this.value" style="position:relative; z-index:1000px; filter:alpha(opacity=0);-moz-opacity:0; opacity:0; left:-155px;" />        	
+        	<input type="button" class="button bg-red margin-left cutT" value="删除轮播图" >
+        </div>
+      </div>`;
+      num++;
+      banner++;
+		$("#typeTitle").before(cont);
+	})
+	$(".form-x").on("click",'.cutT',function(){
+		$(this).parent().parent().remove();
+	})
+</script>
+</html>

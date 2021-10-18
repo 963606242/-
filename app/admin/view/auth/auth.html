@@ -1,0 +1,55 @@
+{include file='public/head' t='网站信息'}
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder"> 分类列表</strong></div>
+  <table class="table table-hover text-center">
+    <tr>
+      <th width="5%">ID</th>
+      <th width="15%">权限组名称</th>
+      <th width="15%">添加时间</th>
+      <th width="10%">操作</th>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>分类管理员</td>
+      <td>2019-7-3</td>
+      <td>
+        <div class="button-group"><a class="button border-main" href="{:url('Auth/authAdd')}"><span class="icon-edit"></span> 修改</a>
+          <a class="button border-red" href="cate.php?id=8&action=del"><span class="icon-trash-o"></span> 删除</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>新闻管理员</td>
+      <td>2019-7-3</td>
+      <td>
+        <div class="button-group"><a class="button border-main" href="cateedit.php?id=7"><span class="icon-edit"></span> 修改</a>
+          <a class="button border-red" href="cate.php?id=7&action=del"><span class="icon-trash-o"></span> 删除</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+     <td>产品管理员</td>
+      <td>2019-7-3</td>
+      <td>
+        <div class="button-group"><a class="button border-main" href="cateedit.php?id=6"><span class="icon-edit"></span> 修改</a>
+          <a class="button border-red" href="cate.php?id=6&action=del"><span class="icon-trash-o"></span> 删除</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><div class="pagelist"> <a href="">上一页</a> <span class="current">1</span><a href="">2</a><a href="">3</a><a href="">下一页</a><a href="">尾页</a> </div></td>
+    </tr>
+  </table>
+</div>
+<script type="text/javascript">
+  function del(id, mid) {
+    if (confirm("您确定要删除吗?")) {
+
+    }
+  }
+</script>
+</body>
+</html>

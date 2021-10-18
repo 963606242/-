@@ -1,0 +1,94 @@
+{include file='public/head' t='网站信息'}
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 商城信息</strong></div>
+  <div class="body-content">
+    <form method="get" class="form-x" action="" enctype="multipart/form-data">
+    	<div class="form-group">
+        <div class="label">
+          <label>网站名称：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="name" value="{$list['name']}" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>网站标题：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="title" value="{$list['title']}" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>网站LOGO：</label>
+        </div>
+        <div class="field">
+          <input type="text" data-image="__ADMIN__/images/logo.png" readonly id="url1" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" />
+          <input type="button"  class="button bg-blue margin-left" id="image1" value="+ 浏览上传" >
+          <input type="file" name="logo" onchange="url1.value=this.value" style="position:relative; z-index:1000px; filter:alpha(opacity=0);-moz-opacity:0; opacity:0; left:-155px;" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>网站关键字：</label>
+        </div>
+        <div class="field">
+          <textarea class="input" name="skeyword" style="height:80px">{$list['keyword']}</textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>网站描述：</label>
+        </div>
+        <div class="field">
+          <textarea class="input" name="description">{$list['describe']}</textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>400电话：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="tel" value="{$list['tel']}" />
+          <div class="tips"></div>
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="label">
+          <label>Email：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="s_email" value="{$list['email']}" />
+          <div class="tips"></div>
+        </div>
+      </div> 
+              
+      <div class="form-group">
+        <div class="label">
+          <label>版权信息：</label>
+        </div>
+        <div class="field">
+          <textarea name="scopyright" class="input" style="height:120px;">{$list['copyright']}</textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
