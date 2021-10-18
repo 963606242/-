@@ -180,8 +180,6 @@ class Index extends BaseController
         //echo "<pre>";
         //print_r($res);
         //echo "</pre>";
-
-        //这是一个测试修改
         echo "<h1>欢迎访问我的代码学习网址</h1>";
 
 
