@@ -191,8 +191,7 @@ class Index extends BaseController
         //$list=Db::name('user')->whereBetweenTime('addtime','2010-1-1','2021-09-19')->select()->toArray();
 
         
-        // $list=Db::name('user')->whereYear('addtime','-2 year')->select();
-        $list = Db::name('goods')->whereBetweenTimeField('addtime','updatetime')->select();
+        $list=Db::name('user')->whereYear('addtime','-2 year')->select();
         // echo '<pre>';
         // echo print_r($list);
         // echo '<pre/>';
