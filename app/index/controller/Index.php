@@ -193,12 +193,17 @@ class Index extends BaseController
         
         // $list=Db::name('user')->whereYear('addtime','-2 year')->select();
         // $list = Db::name('goods')->whereBetweenTimeField('addtime','updatetime')->select();
-        // echo '<pre>';
-        // echo print_r($list);
-        // echo '<pre/>';
+        //$list = Db::name('user')->whereUname('唐僧')->select()->toArray();
+
+        //$list = Db::name('user')->getByUname('悟空');
+        $list = Db::name('user')->getFieldByUname('唐僧','id');
+        echo '<pre>';
+        echo print_r($list);
+        echo '<pre/>';
         
+
         
-        echo "<h1>欢迎访问我的代码学习网址</h1>";
+        //echo "<h1>欢迎访问我的代码学习网址</h1>";
 
 
 
