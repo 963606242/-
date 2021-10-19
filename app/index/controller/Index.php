@@ -2,6 +2,7 @@
 
 namespace app\index\controller;
 use app\BaseController;
+use think\db\Raw;
 use think\facade\Db;
 use think\facade\Request;
 use think\facade\Route;
@@ -196,19 +197,26 @@ class Index extends BaseController
         //$list = Db::name('user')->whereUname('唐僧')->select()->toArray();
 
         //$list = Db::name('user')->getByUname('悟空');
-        $list = Db::name('user')->getFieldByUname('唐僧','id');
-        echo '<pre>';
-        echo print_r($list);
-        echo '<pre/>';
+        // $list = Db::name('user')->getFieldByUname('唐僧','id');
+        // echo '<pre>';
+        // echo print_r($list);
+        // echo '<pre/>';
+
+        //echo $srg = Db::name('user')->fetchSql()->select();
+        //echo $ssr = Db::name('user')->buildSql();
+
+        //Db::table($srg,'u')->where('id','<',5)->select();
         
 
         
         //echo "<h1>欢迎访问我的代码学习网址</h1>";
+        $list =Db::name('order_product')->paginate(5);
+        echo '<pre>';
+        echo print_r($list);
+        echo '<pre/>';
 
 
-
-
-        // return view();
+        return view('index',['list'=>$list]);
     }
 
     public function user()
