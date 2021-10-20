@@ -24,8 +24,6 @@ return [
     'taglib_end'    => '}',
     // 输出替换
     'tpl_replace_string'  =>  [
-        '__STATIC__'=>'/static',
-        '__JS__' => '/static/javascript',
         '__ADMIN__'=>'/static/admin',
     ]
 ];
